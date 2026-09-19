@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accessible and responsive vanilla JavaScript accordion component.">
+  <title>Interactive FAQ Accordion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">WEEK 2 • INTERACTIVE UI COMPONENT</p>
+      <h1 id="page-title">Interactive FAQ Accordion</h1>
+      <p class="intro">
+        A reusable, responsive and accessible accordion built with semantic HTML,
+        CSS and vanilla JavaScript.
+      </p>
+    </section>
+
+    <section class="accordion-section" aria-labelledby="faq-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Frequently Asked Questions</p>
+          <h2 id="faq-title">How does it work?</h2>
+        </div>
+
+        <button class="outline-btn" id="toggle-all" type="button" aria-expanded="false">
+          Expand all
+        </button>
+      </div>
+
+      <div class="accordion" id="faq-accordion">
+        <article class="accordion-item">
+          <h3 class="accordion-heading">
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="true"
+              aria-controls="panel-1"
+              id="trigger-1">
+              <span>What is this component?</span>
+              <span class="icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div
+            class="accordion-panel"
+            id="panel-1"
+            role="region"
+            aria-labelledby="trigger-1">
+            <div class="panel-content">
+              <p>
+                It is a reusable FAQ accordion that lets users show or hide
+                related content without leaving the page.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <h3 class="accordion-heading">
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="panel-2"
+              id="trigger-2">
+              <span>Which technologies are used?</span>
+              <span class="icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div
+            class="accordion-panel"
+            id="panel-2"
+            role="region"
+            aria-labelledby="trigger-2"
+            hidden>
+            <div class="panel-content">
+              <p>
+                The component uses semantic HTML5, CSS3 and vanilla JavaScript.
+                No frameworks or external libraries are required.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <h3 class="accordion-heading">
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="panel-3"
+              id="trigger-3">
+              <span>Is it keyboard accessible?</span>
+              <span class="icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div
+            class="accordion-panel"
+            id="panel-3"
+            role="region"
+            aria-labelledby="trigger-3"
+            hidden>
+            <div class="panel-content">
+              <p>
+                Yes. Accordion buttons can be reached with Tab and activated
+                with Enter or Space. Arrow keys, Home and End also move between
+                accordion controls.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <h3 class="accordion-heading">
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="panel-4"
+              id="trigger-4">
+              <span>What happens on small screens?</span>
+              <span class="icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div
+            class="accordion-panel"
+            id="panel-4"
+            role="region"
+            aria-labelledby="trigger-4"
+            hidden>
+            <div class="panel-content">
+              <p>
+                The layout adapts to smaller screens with flexible spacing,
+                readable typography and touch-friendly controls.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="accordion-item">
+          <h3 class="accordion-heading">
+            <button
+              class="accordion-trigger"
+              type="button"
+              aria-expanded="false"
+              aria-controls="panel-5"
+              id="trigger-5">
+              <span>What is the fallback if JavaScript is unavailable?</span>
+              <span class="icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div
+            class="accordion-panel"
+            id="panel-5"
+            role="region"
+            aria-labelledby="trigger-5"
+            hidden>
+            <div class="panel-content">
+              <p>
+                The page starts with a no-JavaScript fallback that keeps the
+                FAQ content readable. JavaScript only enhances it with
+                interactive controls and animation.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <footer class="footer">
+      <p>Built with HTML5, CSS3 and Vanilla JavaScript.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

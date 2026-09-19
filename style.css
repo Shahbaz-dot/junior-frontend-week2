@@ -1,0 +1,253 @@
+/* Base reset and page styling */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202124;
+  background: #f6f7fb;
+  line-height: 1.6;
+}
+
+button {
+  font: inherit;
+}
+
+.page {
+  width: min(100% - 32px, 920px);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 72px 0 42px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5b4bdb;
+}
+
+.hero h1 {
+  margin: 0 auto 14px;
+  max-width: 700px;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.08;
+}
+
+.intro {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #60656f;
+}
+
+.accordion-section {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e3e5ec;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(30, 35, 50, 0.07);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  line-height: 1.2;
+}
+
+.outline-btn {
+  flex: 0 0 auto;
+  padding: 10px 15px;
+  border: 1px solid #5b4bdb;
+  border-radius: 10px;
+  color: #4c3bc4;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.outline-btn:hover,
+.outline-btn:focus-visible {
+  background: #5b4bdb;
+  color: #ffffff;
+}
+
+.accordion {
+  display: grid;
+  gap: 12px;
+}
+
+.accordion-item {
+  overflow: hidden;
+  border: 1px solid #e1e3ea;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.accordion-trigger {
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  border: 0;
+  background: #ffffff;
+  color: #202124;
+  text-align: left;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.accordion-trigger:hover {
+  background: #f8f8fd;
+}
+
+.accordion-trigger:focus-visible {
+  outline: 3px solid #b8afff;
+  outline-offset: -3px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 28px;
+  border-radius: 50%;
+  background: #eeeaff;
+  color: #4c3bc4;
+  font-size: 1.25rem;
+  transition: transform 0.25s ease;
+}
+
+.accordion-trigger[aria-expanded="true"] .icon {
+  transform: rotate(45deg);
+}
+
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.28s ease, opacity 0.2s ease;
+}
+
+.accordion-panel[hidden] {
+  display: grid;
+}
+
+.accordion-panel.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.panel-content {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  color: #626873;
+}
+
+.accordion-panel.is-open .panel-content {
+  padding-bottom: 20px;
+}
+
+.panel-content p {
+  margin: 0;
+}
+
+.status {
+  min-height: 24px;
+  margin: 16px 0 0;
+  color: #555b66;
+  font-size: 0.9rem;
+}
+
+.footer {
+  padding: 32px 0 55px;
+  text-align: center;
+  color: #777c86;
+  font-size: 0.9rem;
+}
+
+/* No-JavaScript fallback: all content stays readable. */
+.no-js .accordion-panel {
+  display: block;
+  opacity: 1;
+}
+
+.no-js .accordion-panel[hidden] {
+  display: block;
+}
+
+.no-js .icon,
+.no-js .outline-btn {
+  display: none;
+}
+
+/* Responsive layout */
+@media (max-width: 620px) {
+  .page {
+    width: min(100% - 20px, 920px);
+  }
+
+  .hero {
+    padding: 45px 0 28px;
+  }
+
+  .accordion-section {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .outline-btn {
+    width: 100%;
+  }
+
+  .accordion-trigger {
+    min-height: 60px;
+    padding: 16px;
+  }
+
+  .panel-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
